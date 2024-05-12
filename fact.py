@@ -136,56 +136,203 @@ def mul(x):
 # e6 = tk.Enter(master)
 # e7 = tk.Enter(master)
 
-import tkinter as tk
+# import tkinter as tk
 
-def calculate_total():
-    try:
-        # Get input values
-        math_score = float(math_entry.get())
-        science_score = float(science_entry.get())
-        english_score = float(english_entry.get())
+# def calculate_total():
+#     try:
+#         # Get input values
+#         math_score = float(math_entry.get())
+#         science_score = float(science_entry.get())
+#         english_score = float(english_entry.get())
 
-        # Calculate total and average
-        total = math_score + science_score + english_score
-        average = total / 3
+#         # Calculate total and average
+#         total = math_score + science_score + english_score
+#         average = total / 3
 
-        # Update labels
-        total_label.config(text=f"Total: {total:.2f}")
-        average_label.config(text=f"Average: {average:.2f}")
-    except ValueError:
-        total_label.config(text="Invalid input. Enter numeric scores.")
+#         # Update labels
+#         total_label.config(text=f"Total: {total:.2f}")
+#         average_label.config(text=f"Average: {average:.2f}")
+#     except ValueError:
+#         total_label.config(text="Invalid input. Enter numeric scores.")
 
-# Create the main window
-root = tk.Tk()
-root.title("Student Marksheet")
+# # Create the main window
+# root = tk.Tk()
+# root.title("Student Marksheet")
 
-# Add input fields
-math_label = tk.Label(root, text="Math Score:")
-math_label.pack()
-math_entry = tk.Entry(root)
-math_entry.pack()
+# # Add input fields
+# math_label = tk.Label(root, text="Math Score:")
+# math_label.pack()
+# math_entry = tk.Entry(root)
+# math_entry.pack()
 
-science_label = tk.Label(root, text="Science Score:")
-science_label.pack()
-science_entry = tk.Entry(root)
-science_entry.pack()
+# science_label = tk.Label(root, text="Science Score:")
+# science_label.pack()
+# science_entry = tk.Entry(root)
+# science_entry.pack()
 
-english_label = tk.Label(root, text="English Score:")
-english_label.pack()
-english_entry = tk.Entry(root)
-english_entry.pack()
+# english_label = tk.Label(root, text="English Score:")
+# english_label.pack()
+# english_entry = tk.Entry(root)
+# english_entry.pack()
 
-# Add a button to calculate total
-calculate_button = tk.Button(root, text="Calculate Total", command=calculate_total)
-calculate_button.pack()
+# # Add a button to calculate total
+# calculate_button = tk.Button(root, text="Calculate Total", command=calculate_total)
+# calculate_button.pack()
 
-# Display total and average
-total_label = tk.Label(root, text="")
-total_label.pack()
+# # Display total and average
+# total_label = tk.Label(root, text="")
+# total_label.pack()
 
-average_label = tk.Label(root, text="")
-average_label.pack()
+# average_label = tk.Label(root, text="")
+# average_label.pack()
 
-# Start the Tkinter event loop
-root.mainloop()
+# # Start the Tkinter event loop
+# root.mainloop()
 
+# def fact(x):
+#     if x == 1:
+#         return 1
+#     else:
+#         return (x*fact(x-1))
+# #print(fact(7))
+# import cmath
+# a, b, c = map(float, input("Enter three numbers: ").split())
+# d=(b**2)-(4*a*c)
+
+# sol1 = (-b-cmath.sqrt(d)/(2*a))
+# sol2 = (-b+cmath.sqrt(d)/(2*a))
+# print("{}{}".format(sol1,sol2))
+
+# import random 
+# num = random.randint(1,10)
+# guess = None
+# while guess != num:
+#     guess = input("1-10 -> ")
+#     guess = int(guess)
+#     if guess == num:
+#         print("won")
+#         break
+#     else:
+#         print("try")
+
+# import calendar
+# print(calendar.month(2024,12))
+
+# def binary_search(arr, x):
+#     low = 0
+#     high = len(arr) - 1
+#     while low <= high:
+#         mid = (high + low) // 2
+#         if arr[mid] < x:
+#             low = mid + 1
+#         elif arr[mid] > x:
+#             high = mid - 1
+#         else:
+#             return mid
+#     return -1
+
+# arr = [2, 3, 4, 10, 40]
+# x = 10
+# result = binary_search(arr, x)
+
+# if result != -1:
+#     print("Element is present at index", str(result))
+# else:
+#     print("Element is not present in the array")
+
+# def merge(arr, l, m, r):
+#     n1 = m - l + 1
+#     n2 = r - m
+#     L = [0] * n1
+#     R = [0] * n2
+
+#     for i in range(n1):
+#         L[i] = arr[l + i]
+#     for j in range(n2):
+#         R[j] = arr[m + 1 + j]
+
+#     i = 0
+#     j = 0
+#     k = l
+
+#     while i < n1 and j < n2:
+#         if L[i] <= R[j]:
+#             arr[k] = L[i]
+#             i += 1
+#         else:
+#             arr[k] = R[j]
+#             j += 1
+#         k += 1
+
+#     while i < n1:
+#         arr[k] = L[i]
+#         i += 1
+#         k += 1
+
+#     while j < n2:
+#         arr[k] = R[j]
+#         j += 1
+#         k += 1
+
+# def mergeSort(arr, l, r):
+#     if l < r:
+#         m = l + (r - l) // 2
+#         mergeSort(arr, l, m)
+#         mergeSort(arr, m + 1, r)
+#         merge(arr, l, m, r)
+
+# arr = [12, 11, 13, 5, 6, 7]
+# n = len(arr)
+
+# print("Given array is:")
+# for i in range(n):
+#     print("%d" % arr[i], end=" ")
+
+# mergeSort(arr, 0, n - 1)
+
+# print("\n\nSorted array is:")
+# for i in range(n):
+#     print("%d" % arr[i], end=" ")
+
+# x = "malayalam"
+# w = ""
+# for i in x:
+#     w = i + w
+# if x == w:
+#     print("Yes")
+# else:
+#     print("No")
+
+# string = input("Enter a string: ")
+# if string == string[::-1]:
+#     print("The string is a palindrome.")
+# else:
+#     print("The string is not a palindrome.")
+
+# def fibonacci_iterative(n):
+#     fib_sequence = [0, 1]
+#     for i in range(2, n):
+#         next_term = fib_sequence[-1] + fib_sequence[-2]
+#         fib_sequence.append(next_term)
+#     return fib_sequence
+
+# n_terms = 10
+# fibonacci_result = fibonacci_iterative(n_terms)
+# print(f"Fibonacci sequence (using iterative approach): {fibonacci_result}")
+
+def bubbleSort(arr):
+    n = len(arr)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+        if not swapped:
+            break
+
+arr = [64, 34, 25, 12, 22, 11, 90]
+bubbleSort(arr)
+print("Sorted array is:")
+for i in range(len(arr)):
+    print("%d" % arr[i], end=" ")
