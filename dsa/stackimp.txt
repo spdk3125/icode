@@ -1,0 +1,99 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX 10
+
+int count = 0;
+
+// Creating a stack
+struct stack {
+  int items[MAX];
+  int top;
+};
+typedef struct stack st;
+
+void createEmptyStack(st *s) {
+  s->top = -1;
+}
+
+// Check if the stack is full
+int isfull(st *s) {
+  return s->top == MAX - 1;
+}
+
+// Check if the stack is empty
+int isempty(st *s) {
+  return s->top == -1;
+}
+
+// Add elements into stack
+void push(st *s, int newitem) {
+  if (isfull(s)) {
+    printf("STACK FULL\n");
+  } else {
+    s->top++;
+    s->items[s->top] = newitem;
+    count++;
+  }
+}
+
+// Remove element from stack
+void pop(st *s) {
+  if (isempty(s)) {
+    printf("\nSTACK EMPTY\n");
+  } else {
+    printf("Item popped = %d\n", s->items[s->top]);
+    s->top--;
+    count--;
+  }
+}
+
+// Print elements of stack
+void printStack(st *s) {
+  printf("Stack: ");
+  for (int i = 0; i <= s->top; i++) {
+    printf("%d ", s->items[i]);
+  }
+  printf("\n");
+}
+
+// Driver code
+int main() {
+  int ch, item;
+  st *s = (st *)malloc(sizeof(st));
+
+  createEmptyStack(s);
+
+  do {
+    printf("\nStack Operations:\n");
+    printf("1. Push\n");
+    printf("2. Pop\n");
+    printf("3. Print Stack\n");
+    printf("4. Exit\n");
+    printf("Enter your choice: ");
+    scanf("%d", &ch);
+
+    switch (ch) {
+      case 1:
+        printf("Enter the item to push: ");
+        scanf("%d", &item);
+        push(s, item);
+        break;
+      case 2:
+        pop(s);
+        break;
+      case 3:
+        printStack(s);
+        break;
+      case 4:
+        printf("Exiting...\n");
+        break;
+      default:
+        printf("Invalid choice, please try again.\n");
+    }
+  } while (ch != 4);
+
+  free(s); // Free the allocated memory
+  return 0;
+}
+
