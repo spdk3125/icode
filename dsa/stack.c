@@ -5,7 +5,6 @@
 
 int count = 0;
 
-// Creating a stack
 struct stack {
   int items[MAX];
   int top;
@@ -16,17 +15,14 @@ void createEmptyStack(st *s) {
   s->top = -1;
 }
 
-// Check if the stack is full
 int isfull(st *s) {
   return s->top == MAX - 1;
 }
 
-// Check if the stack is empty
 int isempty(st *s) {
   return s->top == -1;
 }
 
-// Add elements into stack
 void push(st *s, int newitem) {
   if (isfull(s)) {
     printf("STACK FULL\n");
@@ -37,7 +33,6 @@ void push(st *s, int newitem) {
   }
 }
 
-// Remove element from stack
 void pop(st *s) {
   if (isempty(s)) {
     printf("\nSTACK EMPTY\n");
@@ -61,7 +56,6 @@ int size(st *s) {
   return s->top + 1;
 }
 
-// Print elements of stack
 void printStack(st *s) {
   printf("Stack: ");
   for (int i = 0; i <= s->top; i++) {
@@ -70,7 +64,6 @@ void printStack(st *s) {
   printf("\n");
 }
 
-// Driver code
 int main() {
   int ch, item;
   st *s = (st *)malloc(sizeof(st));
@@ -114,7 +107,7 @@ int main() {
     }
   } while (ch != 6);
 
-  free(s); // Free the allocated memory
+  free(s); 
   return 0;
 }
 
